@@ -35,7 +35,7 @@ services:
       - $CERTS_PATH:/certs
     ports:
       - "4443:4443"
-      - "222:22"
+      - "4022:22"
   
   db:
     image: postgres:14
