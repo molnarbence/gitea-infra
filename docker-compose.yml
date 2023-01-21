@@ -25,6 +25,7 @@ services:
       - GITEA__server__HTTP_PORT=4443
       - GITEA__server__CERT_FILE=/certs/services.infra.home.crt
       - GITEA__server__KEY_FILE=/certs/services.infra.home.key
+      - GITEA__webhook__ALLOWED_HOST_LIST=*
     restart: always
     networks:
       - gitea
