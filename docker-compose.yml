@@ -7,8 +7,6 @@ networks:
 volumes:
   gitea-data:
     external: true
-  gitea-postgres-next:
-    external: true
   gitea-postgres-17:
     external: true
 
@@ -37,19 +35,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "4022:22"
-
-  db:
-    image: postgres:16
-    container_name: gitea-postgres
-    restart: always
-    environment:
-      - POSTGRES_USER=gitea
-      - POSTGRES_PASSWORD=gitea
-      - POSTGRES_DB=gitea
-    networks:
-      - gitea
-    volumes:
-      - gitea-postgres-next:/var/lib/postgresql/data
 
   db-17:
     image: postgres:17
