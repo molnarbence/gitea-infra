@@ -18,7 +18,7 @@ services:
     container_name: gitea
     environment:
       - GITEA__database__DB_TYPE=postgres
-      - GITEA__database__HOST=gitea-postgres:5432
+      - GITEA__database__HOST=gitea-postgres-17:5432
       - GITEA__database__NAME=gitea
       - GITEA__database__USER=gitea
       - GITEA__database__PASSWD=gitea
