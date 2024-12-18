@@ -9,6 +9,8 @@ volumes:
     external: true
   gitea-postgres-next:
     external: true
+  gitea-postgres-17:
+    external: true
 
 services:
   server:
@@ -48,3 +50,17 @@ services:
       - gitea
     volumes:
       - gitea-postgres-next:/var/lib/postgresql/data
+
+  db-17:
+    image: postgres:17
+    container_name: gitea-postgres-17
+    restart: always
+    environment:
+      - POSTGRES_USER=gitea
+      - POSTGRES_PASSWORD=gitea
+      - POSTGRES_DB=gitea
+    networks:
+      - gitea
+    volumes:
+      - gitea-postgres-17:/var/lib/postgresql/data
+
