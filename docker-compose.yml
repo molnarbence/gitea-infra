@@ -1,5 +1,3 @@
-version: "3"
-
 networks:
   gitea:
     external: false
@@ -39,7 +37,7 @@ services:
       - "4022:22"
   
   db:
-    image: postgres:14
+    image: postgres:15
     container_name: gitea-postgres
     restart: always
     environment:
