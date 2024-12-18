@@ -37,7 +37,7 @@ services:
       - "4022:22"
   
   db:
-    image: postgres:16
+    image: postgres:14
     container_name: gitea-postgres
     restart: always
     environment:
